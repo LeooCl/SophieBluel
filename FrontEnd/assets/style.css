@@ -46,9 +46,12 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
+
+a {
+	text-decoration: none;
+}
 /** end reset css**/
 body {
-	max-width: 1140px;
 	margin:auto;
 	font-family: 'Work Sans' ;
 	font-size: 14px;
@@ -96,9 +99,23 @@ nav li {
 	font-size: 1.2em;
 }
 
-li:hover {
+nav li a {
+	color: black;
+}
+
+li a:hover {
 	color: #B1663C;
 }
+.container {
+	max-width: 1140px;
+	margin: auto;
+}
+
+header.container {
+	margin-top: 50px;
+	margin-bottom: 50px;
+}
+
 #introduction {
 	display: flex;
 	align-items: center;
@@ -192,7 +209,7 @@ footer nav ul {
 .filter {
 	display: flex;
 	justify-content: center;
-	margin-bottom: 2rem;
+	margin-top: 2rem;
 }
 
 .filter-button {
@@ -211,6 +228,10 @@ footer nav ul {
 .active-filter {
 	background-color: #1D6154;
 	color: #FFFEF8;
+}
+
+.gallery {
+	margin-top: 2rem;
 }
 
 /* *********Login form********* */
@@ -249,4 +270,257 @@ footer nav ul {
 .user-login-form a {
 	color: #3d3d3d;
 	margin: auto;
+}
+
+/* *********Edition mode********* */
+
+#div-edition {
+	background-color: black;
+	color: white;
+	height: 59px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 16px;
+	font-weight: 500;
+	max-width: 100%;
+	margin-bottom: 2rem;
+}
+
+#div-edition i {
+	padding: 0 10px;
+}
+
+#titleProjects {
+	display:flex;
+	justify-content: center;
+	gap: 20px;
+}
+
+#titleProjects h2 {
+	margin: 0;
+}
+
+#titleProjects button {
+	border: none;
+	background-color: #FFFEF8;
+	cursor: pointer;
+	font-size: 0.9rem;
+	font-weight: 500;
+	font-family: 'Work Sans';
+}
+
+#titleProjects button:hover {
+	color: #B1663C;
+}
+
+/* *********Modal********* */
+
+/* Gallery */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4);
+}
+
+.modal-content, 
+.modal-add-project-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 30px;
+    width: 630px;
+	border-radius: 10px;
+	position: relative;
+}
+
+.modal-content h2,
+.modal-add-project-content h2{
+	padding-top: 50px;
+	display: flex;
+	justify-content: center;
+	font: inherit;
+	color: black;
+	font-size: 1.5rem;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 22px;
+    font-weight: bold;
+	position: absolute;
+	top: 10px;
+	right: 10px;
+}
+
+.back {
+	color: #aaa;
+    float: left;
+    font-size: 22px;
+    font-weight: bold;
+	position: absolute;
+	top: 10px;
+	left: 10px;
+}
+
+.close:hover,
+.back:hover {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.projectsContainer {
+	display: flex;
+	flex-direction: row;
+}
+
+.modal .project {
+	position: relative;
+}
+
+.modal .project img {
+    width: 80px;
+    height: auto;
+    position: relative;
+}
+
+.delete-icon {
+    position: absolute;
+    top: 0;
+    right: 0;
+    cursor: pointer;
+    padding: 5px;
+}
+
+.delete-icon i {
+    color: white;
+	background-color: black;
+    font-size: 10px;
+	padding: 5px;
+	border-radius: 3px;
+}
+
+#modalProjectsContainer {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	margin: 40px 80px 30px 80px;
+	gap: 30px 10px;
+	border-bottom: solid 2px #B3B3B3;
+	padding-bottom: 50px;
+}
+
+.modal .projects {
+	width: calc(20% - 20px);
+    margin-bottom: 20px; 
+}
+
+.add-button-modal-container {
+	display: flex;
+	justify-content: center;
+}
+
+#add-project-button-modal {
+	background-color: #1D6154;
+	border-radius: 20px;
+	padding: 10px 50px 10px 50px;
+	margin-bottom: 20px;
+	color: white;
+	border: none;
+	display: flex;
+	justify-content: center;
+	font-family: 'Syne';
+	cursor: pointer;
+}
+
+.add-project-button-modal:hover {
+	background-color: #B1663C;
+}
+
+/* Ajout de projet */
+
+.modal-new-image {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	background-color: #E8F1F7;
+	padding: 20px 0 20px 0;
+	border-radius: 5px;
+	margin: 35px 100px 0 100px;
+}
+
+.modal-new-image #new-image {
+	background-color: #CBD6DC;
+	border: none;
+	border-radius: 50px;
+	font-family: 'Work Sans';
+	font-size: 1em;
+	font-weight: bold;
+	color: #306685;
+	padding: 15px 40px;
+	cursor: pointer;
+}
+
+.modal-new-image i {
+	font-size: 60px;
+	color: #B9C5CC;
+	padding-bottom: 15px;
+}
+
+.modal-new-image #form-image {
+	margin-top: -40px;
+	padding: 8px 0;
+	border: none;
+	border-radius: 50px;
+	opacity: 0;
+	cursor: pointer;
+}
+
+.modal-new-image p {
+	margin-top: 15px;
+}
+
+.modal-new-category {
+	display: flex;
+	flex-direction: column;
+	padding: 20px 100px 0 100px;
+}
+
+.modal-new-category input[type="text"], select {
+	height: 50px;
+	border: none;
+	box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.09);
+}
+
+.modal-new-category label {
+	padding: 20px 0 10px 0;
+	font-size: 1rem;
+}
+
+.modal-new-category #form-title, #form-category {
+	font-family: 'Work Sans';
+	font-size: 1em;
+}
+
+.modal-new-category .border-bottom {
+	width: 100%;
+	border-bottom: solid 1px #B3B3B3;
+	margin-top: 40px;
+}
+
+.modal-new-category #submit-new-work {
+	background-color: #A7A7A7;
+	border: none;
+	padding: 10px 0 10px 0;
+	width: 200px;
+	font-size: 1rem;
+	cursor: pointer;
 }
